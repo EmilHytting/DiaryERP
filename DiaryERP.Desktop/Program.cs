@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using DiaryERP.Utils;
 using Microsoft.Extensions.Configuration;
 using System.IO;
+using System.Diagnostics;
 
 namespace DiaryERP.Desktop
 {
@@ -22,7 +23,7 @@ namespace DiaryERP.Desktop
 
             bool canConnect = await ConnectionTester.TestConnectionAsync(connectionString);
 
-            Console.WriteLine(canConnect ? "Databaseforbindelse OK!" : "Databaseforbindelse FEJLEDE!");
+            Debug.Print(canConnect ? "Databaseforbindelse OK!" : "Databaseforbindelse FEJLEDE!");
 
             BuildAvaloniaApp()
                 .StartWithClassicDesktopLifetime(args);

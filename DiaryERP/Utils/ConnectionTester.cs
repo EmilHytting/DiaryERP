@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace DiaryERP.Utils
@@ -12,13 +13,13 @@ namespace DiaryERP.Utils
             {
                 using var connection = new SqlConnection(connectionString);
                 await connection.OpenAsync();
-                Console.WriteLine("Forbindelse oprettet.");
+                Debug.Print("Forbindelse oprettet.");
                 return true;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Forbindelse fejlede:");
-                Console.WriteLine(ex.Message);
+                Debug.Print("Forbindelse fejlede:");
+                Debug.Print(ex.Message);
                 return false;
             }
         }
