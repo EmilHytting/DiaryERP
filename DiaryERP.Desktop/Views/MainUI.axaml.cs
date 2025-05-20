@@ -1,12 +1,13 @@
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 
 namespace DiaryERP.Desktop;
 
-public partial class UserControl1 : UserControl
+public partial class MainUI : Window
 {
-    public UserControl1()
+    public MainUI()
     {
         InitializeComponent();
     }
